@@ -1,6 +1,5 @@
-/*
-Basandote en el array siguiente, crea una lista ul > li dinámicamente en el html 
-que imprima cada uno de los albums.
+
+// Basandote en el array siguiente, crea una lista ul > li dinámicamente en el html que imprima cada uno de los albums.
 
 const albums = [
   "De Mysteriis Dom Sathanas",
@@ -9,4 +8,17 @@ const albums = [
   "Painkiller",
   "Iron Fist",
 ];
-*/
+
+const albumsListCreator = (array) => {
+  const albumsList = document.createElement('ul');
+
+  array.forEach(element => {
+    const albumListItem = document.createElement('li');
+    albumListItem.innerText = element;
+    albumsList.appendChild(albumListItem);
+  });
+
+  return albumsList;
+};
+
+document.body.appendChild(albumsListCreator(albums));
